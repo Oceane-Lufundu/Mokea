@@ -1,0 +1,23 @@
+.module-chiffre{
+    background-color: #ececec;
+    border-radius:  25px;
+    margin-top: auto;
+}
+.case-chiffre{
+    background-color: #c6c6c6;
+    border-radius: 25px;
+    margin-top: 2%;
+    height: 200px;
+    margin-inline: auto;
+    & h2{
+        font-size: 1.5em;
+    }
+
+    & .chiffre{
+        font-size: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
