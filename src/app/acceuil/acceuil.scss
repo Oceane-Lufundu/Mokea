@@ -1,0 +1,297 @@
+// Variables de couleurs
+$primary-color: #D0887A; // rosé chaleureux
+$accent-color: #e74c3c;
+$secondary-color: #FF7E4A; // orange corail
+$light-color: #f8f9fa;
+$dark-color: #2c3e50;
+$text-color: #333333;
+$border-color: #ddd;
+
+// Variables de polices
+$font-primary: 'Inter', sans-serif;
+$font-heading: 'Playfair Display', serif;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin card-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+// Reset et styles de base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    color: $text-color;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #f2d6d0 0%, #D0887A 40%, #FFB5A0 70%, #FF7E4A 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    @include card-shadow;
+}
+
+// En-tête
+.header {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+    border-bottom: 5px solid $accent-color;
+
+    .brand-name {
+        font-family: $font-heading;
+        font-size: 3.8rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+
+        .brand-accent {
+            color: rgb(255, 255, 255);
+        }
+
+        .brand-base {
+            color: rgb(100, 227, 62);
+        }
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        letter-spacing: 1.5px;
+        font-weight: 300;
+    }
+}
+
+// Contenu principal
+.main-content {
+    padding: 30px 40px;
+
+    .page-title {
+        margin-bottom: 40px;
+        text-align: center;
+        
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.4rem;
+            color: $dark-color;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 2px solid $accent-color;
+            
+            i {
+                margin-right: 12px;
+                color: $accent-color;
+            }
+        }
+    }
+}
+
+// Conteneur des menus
+.menus-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+// Carte de menu
+.menu-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    @include card-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $border-color;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .menu-header {
+        background: linear-gradient(to right, lighten($primary-color, 10%), lighten($secondary-color, 10%));
+        color: white;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu-title {
+            font-family: $font-heading;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .menu-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+    }
+
+    .menu-items {
+        list-style-type: none;
+        padding: 25px;
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .item-quantity {
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                background-color: $accent-color;
+                color: white;
+                border-radius: 50%;
+                @include flex-center;
+                font-weight: 700;
+                margin-right: 15px;
+                flex-shrink: 0;
+            }
+
+            .item-name {
+                font-size: 1.1rem;
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+// Pied de page
+.footer {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .menus-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-radius: 12px;
+    }
+
+    .header {
+        padding: 25px 20px;
+
+        .brand-name {
+            font-size: 3rem;
+        }
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+
+    .menus-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .menu-card {
+        .menu-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+
+            .menu-price {
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        .brand-name {
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .main-content {
+        .page-title h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .menu-card {
+        .menu-header {
+            .menu-title {
+                font-size: 1.6rem;
+            }
+
+            .menu-price {
+                font-size: 1.6rem;
+            }
+        }
+
+        .menu-items {
+            padding: 20px;
+
+            .menu-item {
+                .item-name {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/* Logo sizing (desktop + responsive) */
+.logo img,
+.acceuil-logo img,
+.logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .logo img,
+    .acceuil-logo img,
+    .logo-img {
+        height: 22px;
+    }
+}

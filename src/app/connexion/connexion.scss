@@ -1,30 +1,35 @@
 .index {
-  background-color: #D0887A;
+    background-color: #D0887A;
 }
 
 /* Boîte du formulaire */
 .jpp {
-  font-size: 20px;
-  text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  padding: 35px;
-  width: 45%;
-  margin: 70px auto;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(30px);
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid;
+    padding: 35px;
+    width: 45%;
+    margin: 70px auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+
+    border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
-.button {
-  margin-top: 20px;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 
-  &:hover {
-    background-color: darken(#007bff, 10%);
-  }
+
+/* Bouton centré */
+.jpp button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.jpp button:hover {
+    background-color: #0056b3;
 }
