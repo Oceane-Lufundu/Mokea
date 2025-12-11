@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global reset and full-height containers */
+html, body, app-root {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Small utility to ensure router outlets can stretch if needed */
+router-outlet, .app-root, .container-fullheight {
+	min-height: 100vh;
+}

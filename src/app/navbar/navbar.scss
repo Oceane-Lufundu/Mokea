@@ -1,7 +1,29 @@
+/* nav bar */
+.nav{
+    background-color: #D0887A;
+}
+
+/* Nav Bar */
 .nav {
     list-style: none;
-    text-decoration: none;
-    display: flex;
-    text-align: center;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: space-between;
+    padding: 0.5%;
+    border-radius: 5px;
+    
+}
+
+.nav-item{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
 }

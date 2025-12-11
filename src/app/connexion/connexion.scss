@@ -1,23 +1,25 @@
 .index {
     background-color: #D0887A;
+    min-height: 100vh; /* occupe toute la hauteur de la fenêtre */
+    display: flex;
+    align-items: center; /* centre verticalement le contenu */
+    justify-content: center; /* centre horizontalement le contenu */
+    padding: 20px 0; /* respiration en haut/bas */
 }
 
 /* Boîte du formulaire */
 .jpp {
     font-size: 20px;
     text-align: center;
-    border: 2px solid;
-    padding: 35px;
-    width: 45%;
-    margin: 70px auto;
+    padding: 45px;
+    width: 250%;
+    max-width: 720px; /* limite la largeur sur grands écrans */
+    margin: 0; /* géré par le parent flex pour centrer */
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px);
-
     border: 2px solid rgba(255, 255, 255, 0.18);
 }
-
-
 
 /* Bouton centré */
 .jpp button {
